@@ -20,7 +20,7 @@ sandie.evaluate(
 # => {"stdout"=>"hello world\n", "stderr"=>"", "wallTime"=>247, "exitCode"=>0}
 ```
 
-Here is a table of all the possible keys you can pass to it:
+Here is a table of all the possible keys you can pass to `Sandie#new` (only first) and `Sandie#evaluate`:
 
 | Key | Type | Description |
 | --- | --- | --- |
