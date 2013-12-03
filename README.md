@@ -7,10 +7,10 @@ Sandie is a straightforward API wrapper for the [eval.so](http://eval.so/) [API]
 Install it as `gem install sandie`. Or if you're using Bundler, add `gem 'sandie'` to your Gemfile, and then `bundle`.
 
 ## Usage
-To evaluate some code, you need to use Sandie's `eval` method which takes a Hash splat, like this:
+To evaluate some code, you need to use Sandie's `evaluate` method which takes a Hash splat, like this:
 ```ruby
 sandie = Sandie.new(language: 'ruby')
-sandie.eval(
+sandie.evaluate(
   code: 'print "hello world"',
   # input_files: {
   #   'input_file.rb' => 'base64 encoded input file value'
