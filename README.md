@@ -20,14 +20,14 @@ sandie.evaluate(
 # => {"stdout"=>"hello world\n", "stderr"=>"", "wallTime"=>247, "exitCode"=>0}
 ```
 
-Here is a table of all the possible keys you can pass to `Sandie#new` (only first) and `Sandie#evaluate`:
+Here is a table of all the possible keys you can pass to the various `Sandie` methods:
 
-| Key | Type | Description |
-| --- | --- | --- |
-| `language` | String | *Required* - the language being evaluated. |
-| `code` | String | *Required* - the code to evaluate. |
-| `input_files` | Hash | Contains files that are placed in the evaluation root. The filename is the *key* and the contents of the file is a *base64 encoded* `value`. |
-| `compilation_only` | Boolean | If `true`, only compilation will happen and not execution of the result. Defaults to `false`. |
+| Method | Key | Type | Description |
+| --- | --- | --- | --- |
+| `Sandie#new` | `language` | String | *Required* - the language being evaluated. |
+| `Sandie#evaluate` | `code` | String | *Required* - the code to evaluate. |
+| `Sandie#evaluate` | `input_files` | Hash | Contains files that are placed in the evaluation root. The filename is the *key* and the contents of the file is a *base64 encoded* `value`. |
+| `Sandie#evaluate` | `compilation_only` | Boolean | If `true`, only compilation will happen and not execution of the result. Defaults to `false`. |
 
 To list all the available languages that eval.so supports, use Sandie's `languages` method which takes no arguments:
 ```ruby
