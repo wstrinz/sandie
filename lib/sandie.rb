@@ -7,7 +7,7 @@ class Sandie
   # Initializes Sandie, and sets the language being evaluated
   #
   # @param args [Hash]
-  #   * :language - the language being evaluated
+  #   * :language - required, the language being evaluated
   def initialize(**args)
     @language = args[:language] || throw(ArgumentError)
   end
@@ -15,7 +15,7 @@ class Sandie
   # Evaluates code, and returns the response Hash
   #
   # @param args [Hash]
-  #   * :code - the code to evaluate
+  #   * :code - required, the code to evaluate
   #   * :input_files - optional, the files that are placed in the evaluation root. The filename is the key and the contents of the file is a base64 encoded value
   #   * :compilation_only - optional, if true, only compilation will happen and not execution of the result. Defaults to false
   # @return [Hash] the response from eval.so API based on the passed args
