@@ -1,4 +1,4 @@
-# Sandie [![Build Status](https://travis-ci.org/codets/sandie.png?branch=master)](https://travis-ci.org/codets/sandie) [![Coverage Status](https://coveralls.io/repos/codets/sandie/badge.png)](https://coveralls.io/r/codets/sandie)
+# Sandie [![Build Status](https://travis-ci.org/codets/sandie.png?branch=master)](https://travis-ci.org/codets/sandie) [![Coverage Status](https://coveralls.io/repos/codets/sandie/badge.png)](https://coveralls.io/r/codets/sandie) [![Code Climate](https://codeclimate.com/github/codets/sandie.png)](https://codeclimate.com/github/codets/sandie)
 Sandie is a straightforward API wrapper for the [eval.so](http://eval.so/) [API](http://eval.so/api). Eval.so is a sandboxed code evaluation platform which namely support C#, Ruby, Python, Lua, and even Java!
 
 *Notably, some parts of the API may note work as expected; if so this isn't Sandie's fault. In addition to providing a nice Ruby layer to the eval.so API, (in the future) this project will also test various supported languages from the API.*
