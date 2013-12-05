@@ -38,6 +38,9 @@ sandie.languages
 ## Development
 If you'd like to contribute to Sandie or just do some development on it, make sure you fork it, clone it and inside its directory run `bundle`. If you want to run tests, the `Guardfile` is all setup and ready so you can simply run `guard` (or `bundle exec guard`). To run the tests without Guard, run `rspec` (or `bundle exec rspec`). At the end of each run, you'll be told the coverage statistics.
 
+### Versioning
+This library aims to adhere to [Semantic Versioning 2.0.0](http://semver.org/spec/v2.0.0.html). Violations of this scheme should be reported as bugs. Specifically, if a minor or patch version is released that breaks backward compatibility, that version should be immediately yanked and/or a new version should be immediately released that restores compatibility. Breaking changes to the public API will only be introduced with new major versions. As a result of this policy, you can (and should) specify a dependency on this gem using the [Pessimistic Version Constraint](http://docs.rubygems.org/read/chapter/16#page74) with two digits of precision.
+
 ### Contributing
 1. Fork the repository.
 2. Create a topic branch.
