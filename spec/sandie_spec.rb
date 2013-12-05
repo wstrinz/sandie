@@ -23,4 +23,26 @@ describe Sandie do
       @sandie.language.should be_a String
     end
   end
+
+  describe '#languages' do
+    before(:each) do
+      @sandie = Sandie.new(language: 'ruby')
+    end
+    let(:response) { @sandie.languages }
+
+    it 'should exist' do
+      @sandie.methods.should include :languages
+    end
+
+    it 'should return a Hash' do
+      response.should be_a Hash
+    end
+
+    it 'should include certain keys' do
+      response.should include 'ruby'
+      response.should include 'jruby18'
+      response.should include 'java'
+      response.should include 'c'
+    end
+  end
 end

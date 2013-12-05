@@ -34,4 +34,11 @@ class Sandie
       }.to_json
     }).parsed_response
   end
+
+  # Returns a Hash of all supported languages
+  #
+  # @return [Hash] the Hash of languages supported by the eval.so API, with their corresponding "display names"
+  def languages
+    Client.get('/languages').parsed_response
+  end
 end
