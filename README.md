@@ -46,5 +46,7 @@ If you'd like to contribute to Sandie or just do some development on it, make su
 5. Implement your feature or bug fix.
 6. Run `rspec`. If your tests fail return to step 5.
 7. Open `coverage/index.html` in your browser. If your changes are not completely covered by your tests, return to step 3.
-8. Add, commit, and push your changes.
-9. Submit a pull request.
+8. Add documentation for your feature or bug fix.
+9. Run `yard doc`. If your changes are not 100% documented, go back to step 8.
+10. Add, commit, and push your changes.
+11. Submit a pull request.
