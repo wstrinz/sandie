@@ -34,3 +34,17 @@ To list all the available languages that eval.so supports, use Sandie's `languag
 sandie.languages
 # => {"csharp"=>{"display_name"=>"C#"}, "rust"=>{"display_name"=>"Rust 0.7"}, "clojure"=>{"display_name"=>"Clojure"}, "python2"=>{"display_name"=>"Python 2"}, "idris"=>{"display_name"=>"Idris"}, "chickenscheme"=>{"display_name"=>"Chicken Scheme"}, "jruby18"=>{"display_name"=>"JRuby (1.8 mode)"} (...)
 ```
+
+## Development
+If you'd like to contribute to Sandie or just do some development on it, make sure you fork it, clone it and inside its directory run `bundle`. If you want to run tests, the `Guardfile` is all setup and ready so you can simply run `guard` (or `bundle exec guard`). To run the tests without Guard, run `rspec` (or `bundle exec rspec`). At the end of each run, you'll be told the coverage statistics.
+
+### Contributing
+1. Fork the repository.
+2. Create a topic branch.
+3. Add tests for your unimplemented feature or bug fix.
+4. Run `rspec`. If your tests pass return to step 3.
+5. Implement your feature or bug fix.
+6. Run `rspec`. If your tests fail return to step 5.
+7. open `coverage/index.html` in your browser. If your changes are not completely covered by your tests, return to step 3.
+8. Add, commit, and push your changes.
+9. Submit a pull request.
