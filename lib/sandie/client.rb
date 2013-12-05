@@ -1,3 +1,4 @@
+# HTTParty and API configuration class
 class Client
   include HTTParty
 

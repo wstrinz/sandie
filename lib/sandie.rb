@@ -1,6 +1,7 @@
 require 'httparty'
 require 'sandie/client'
 
+# Main Sandie class which contains methods which communicate with the eval.so API directly
 class Sandie
   attr_reader :language
 
