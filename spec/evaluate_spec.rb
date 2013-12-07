@@ -1,36 +1,32 @@
 require 'spec_helper'
+require 'base64'
 
 describe Sandie do
   describe '#evaluate' do
-    before(:each) do
-      @sandie = Sandie.new(language: 'ruby')
-    end
+    let(:sandie_instance) { Sandie.new(language: 'ruby') }
 
     it 'should exist' do
-      @sandie.methods.should include :evaluate
+      sandie_instance.methods.should include :evaluate
     end
 
     it 'should not raise error if :language is or is not passed' do
-      expect { @sandie.evaluate(code: '') }.to_not raise_error
-      expect { @sandie.evaluate(language: '', code: '') }.to_not raise_error
+      expect { sandie_instance.evaluate(code: '') }.to_not raise_error
+      expect { sandie_instance.evaluate(language: '', code: '') }.to_not raise_error
     end
 
     it 'should raise ArgumentError if :code is not passed' do
-      expect { @sandie.evaluate }.to raise_error ArgumentError
+      expect { sandie_instance.evaluate }.to raise_error ArgumentError
     end
 
     context 'when "puts \'hello world\'" is passed as :code' do
-      let(:response) { @sandie.evaluate(code: "puts 'hello world'") }
+      let(:response) { sandie_instance.evaluate(code: "puts 'hello world'") }
 
       it 'should respond with a Hash' do
         response.should be_a Hash
       end
 
       it 'should and should not include various keys' do
-        response.should include 'stdout'
-        response.should include 'stderr'
-        response.should include 'wallTime'
-        response.should include 'exitCode'
+        %w{ stdout stderr wallTime exitCode }.each { |i| response.should include i }
         response.should_not include 'outputFiles'
         response.should_not include 'compilationResult'
       end
@@ -46,10 +42,10 @@ describe Sandie do
 
     context 'when code and input files are passed' do
       let(:response) do
-        @sandie.evaluate(
+        sandie_instance.evaluate(
           code: 'require "./input_file"',
           input_files: {
-            'input_file.rb' => 'cHV0cyAiaGVsbG8gd29ybGQi' # puts "hello world"
+            'input_file.rb' => Base64.encode64('puts "hello world"')
           }
         )
       end
