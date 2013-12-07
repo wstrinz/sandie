@@ -34,7 +34,7 @@ describe Sandie do
     end
 
     it 'should include certain keys' do
-      ['ruby', 'jruby18', 'java', 'c'].each { |i| response.should include i }
+      %w{ ruby jruby18 java c }.each { |i| response.should include i }
     end
   end
 end
