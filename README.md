@@ -10,14 +10,21 @@ Install it as `gem install sandie`. Or if you're using Bundler, add `gem 'sandie
 To evaluate some code, you need to use Sandie's `evaluate` method which takes a Hash splat, like this:
 ```ruby
 sandie = Sandie.new(language: 'ruby')
+# => #<Sandie:0x00000002e30650>
+sandie.evaluate(code: 'puts "hello world"')
+# => {"stdout"=>"hello world\n", "stderr"=>"", "wallTime"=>487, "exitCode"=>0}
+```
+
+Passing files to `evaluate` is as easy as passing a Hash:
+``` ruby
+require 'base64'
 sandie.evaluate(
-  code: 'print "hello world"',
-  # input_files: {
-  #   'input_file.rb' => 'base64 encoded input file value'
-  # },
-  compilation_only: false
+  code: 'require "./input_file_1"',
+  input_files: {
+    'input_file_1.rb' => Base64.encode64('puts "hello world, from #{__FILE__}"')
+  }
 )
-# => {"stdout"=>"hello world\n", "stderr"=>"", "wallTime"=>247, "exitCode"=>0}
+# => {"stdout"=>"hello world, from /home/evalso/input_file_1.rb\n", "stderr"=>"", "wallTime"=>249, "exitCode"=>0}
 ```
 
 Here is a table of all the possible keys you can pass to the various `Sandie` methods:
