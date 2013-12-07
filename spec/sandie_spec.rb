@@ -23,11 +23,10 @@ describe Sandie do
   end
 
   describe '#languages' do
-    let(:sandie_instance) { Sandie.new(language: 'ruby') }
-    let(:response) { sandie_instance.languages }
+    let(:response) { Sandie.languages }
 
     it 'should exist' do
-      sandie_instance.methods.should include :languages
+      Sandie.methods.should include :languages
     end
 
     it 'should return a Hash' do
