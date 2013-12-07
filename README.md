@@ -38,7 +38,7 @@ Here is a table of all the possible keys you can pass to the various `Sandie` me
 
 To list all the available languages that eval.so supports, use Sandie's `languages` method which takes no arguments:
 ```ruby
-sandie.languages
+Sandie.languages
 # => {"csharp"=>{"display_name"=>"C#"}, "rust"=>{"display_name"=>"Rust 0.7"}, "clojure"=>{"display_name"=>"Clojure"}, "python2"=>{"display_name"=>"Python 2"}, "idris"=>{"display_name"=>"Idris"}, "chickenscheme"=>{"display_name"=>"Chicken Scheme"}, "jruby18"=>{"display_name"=>"JRuby (1.8 mode)"} (...)
 ```
 
