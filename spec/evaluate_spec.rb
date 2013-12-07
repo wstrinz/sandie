@@ -39,7 +39,21 @@ describe Sandie do
         expect(response['stderr']).to be_empty
       end
     end
+    
+    context 'when manually specifying language' do
+      let(:csharp_instance) { Sandie.new(language: 'csharp')}
 
+      it 'allows manually specifying language on evaluate' do
+	csharp_instance.evaluate(
+          code: 'require "./input_file"',
+          language: 'ruby',
+	  input_files: {
+            'input_file.rb' => Base64.encode64('puts "hello world"')
+          }
+        )['stdout'].should == "hello world\n"
+      end
+    end
+    
     context 'when code and input files are passed' do
       let(:response) do
         sandie_instance.evaluate(

@@ -18,16 +18,21 @@ class Sandie
   # @param args [Hash]
   #   * :code - required, the code to evaluate
   #   * :input_files - optional, the files that are placed in the evaluation root. The filename is the key and the contents of the file is a base64 encoded value
+  #   * :language - optional, override language setting for a single evaluate call
   #   * :compilation_only - optional, if true, only compilation will happen and not execution of the result. Defaults to false
   # @return [Hash] the response from eval.so API based on the passed args
   def evaluate(**args)
     throw ArgumentError unless args[:code]
+
+    language = args[:language] || @language
+    throw ArgumentError unless language
+
     (throw TypeError unless args[:input_files].kind_of? Hash) if args[:input_files]
 
     Client.post('/evaluate', {
       headers: { 'Content-Type' => 'application/json' },
       body: {
-        'language' => @language,
+        'language' => language,
         'code' => args[:code],
         'inputFiles' => args[:input_files],
         'compilationOnly' => args[:compilation_only]
